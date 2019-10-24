@@ -8,8 +8,8 @@
         This App must be invoked via a signed request!<%
         return;
     }
-    String yourConsumerSecret=System.getenv("DD85279F59FC677F0B6C7BA8C7A78BF8A0D71E95DFACCFAC8F829C5A4BDD78D8");//""CANVAS_CONSUMER_SECRET");
-    //String yourConsumerSecret="1818663124211010887";
+    //String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
+    String yourConsumerSecret="DD85279F59FC677F0B6C7BA8C7A78BF8A0D71E95DFACCFAC8F829C5A4BDD78D8";
     String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
 %>
 
