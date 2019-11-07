@@ -39,12 +39,19 @@
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
+            Sfdc.canvas.byId('email').innerHTML = sr.context.user.email;
+            Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
+            Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
         });
 
     </script>
 </head>
 <body>
     <br/>
-    <h1>Hello <span id='username'></span></h1>
+    <h1>Username: <span id='username'></span></h1>
+    <h1>Email: <span id='email'></span></h1>
+    <h1>Base Object:  <span id='baseobject'></h1>
+    <h1>URL:  <span id='url'></h1>
+</body>
 </body>
 </html>
