@@ -5,11 +5,11 @@
     Map<String, String[]> parameters = request.getParameterMap();
     String[] signedRequest = parameters.get("signed_request");
     if (signedRequest == null) {%>
-        This App must be invoked via a signed request!<%
+This App must be invoked via a signed request!<%
         return;
     }
     //String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
-    String yourConsumerSecret="DD85279F59FC677F0B6C7BA8C7A78BF8A0D71E95DFACCFAC8F829C5A4BDD78D8";
+    String yourConsumerSecret = "DD85279F59FC677F0B6C7BA8C7A78BF8A0D71E95DFACCFAC8F829C5A4BDD78D8";
     String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
 %>
 
@@ -19,7 +19,7 @@
 
     <title>Hello World Canvas Example</title>
 
-    <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css" />
+    <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css"/>
 
     <!-- Include all the canvas JS dependencies in one file -->
     <script type="text/javascript" src="/scripts/canvas-all.js"></script>
@@ -32,9 +32,9 @@
             alert("This canvas app must be included within an iframe");
         }
 
-        Sfdc.canvas(function() {
+        Sfdc.canvas(function () {
             var sr = JSON.parse('<%=signedRequestJson%>');
-            console.log('sr=>'+sr);
+            console.log('sr=>' + sr);
             console.dir(sr);
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
@@ -42,16 +42,20 @@
             Sfdc.canvas.byId('email').innerHTML = sr.context.user.email;
             Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
             Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
+            Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
+            Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
         });
 
     </script>
 </head>
 <body>
-    <br/>
-    <h1>Username: <span id='username'></span></h1>
-    <h1>Email: <span id='email'></span></h1>
-    <h1>Base Object:  <span id='baseobject'></h1>
-    <h1>URL:  <span id='url'></h1>
+<br/>
+<h1>Username: <span id='username'></span></h1>
+<h1>Email: <span id='email'></span></h1>
+<h1>Base Object: <span id='baseobject'></span></h1>
+<h1>URL: <span id='url'></span></h1>
+<h1>Canvas APP: <span id='canvasApp'></span></h1>
+<h1>URL2: <span id='url2'></span></h1>
 </body>
 </body>
 </html>
