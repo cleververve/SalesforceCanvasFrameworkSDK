@@ -42,9 +42,10 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
             Sfdc.canvas.byId('email').innerHTML = sr.context.user.email;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.application.name;
-            Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
+
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
+            // Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
             window.location = sr.context.environment.parameters.URL;
         });
 
