@@ -10,7 +10,7 @@ This App must be invoked via a signed request!<%
     }
     //String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
 //    String yourConsumerSecret = "DD85279F59FC677F0B6C7BA8C7A78BF8A0D71E95DFACCFAC8F829C5A4BDD78D8";
-   String yourConsumerSecret = "C918503CC1B2A99910BF5AC687F102B9625EF403DC3E905E3A0D962F75FECFD2";
+    String yourConsumerSecret = "C918503CC1B2A99910BF5AC687F102B9625EF403DC3E905E3A0D962F75FECFD2";
 
 
     String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
@@ -20,7 +20,7 @@ This App must be invoked via a signed request!<%
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 
-    <title>Canvas 1</title>
+    <title>Canvas 2</title>
 
     <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css"/>
 
@@ -48,6 +48,7 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
             Sfdc.canvas.byId('emails').innerHTML = sr.context.environment.parameters.emails;
+            window.location = sr.context.environment.parameters.URL;
         });
 
     </script>

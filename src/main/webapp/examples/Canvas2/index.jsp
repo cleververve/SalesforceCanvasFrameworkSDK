@@ -20,7 +20,7 @@ This App must be invoked via a signed request!<%
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 
-    <title>Hello World Canvas Example</title>
+    <title>Canvas 2</title>
 
     <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css"/>
 
@@ -47,8 +47,8 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
+            Sfdc.canvas.byId('emails').innerHTML = sr.context.environment.parameters.emails;
         });
-
     </script>
 </head>
 <body>
@@ -59,6 +59,7 @@ This App must be invoked via a signed request!<%
 <h1>URL: <span id='url'></span></h1>
 <h1>Canvas APP: <span id='canvasApp'></span></h1>
 <h1>URL2: <span id='url2'></span></h1>
+<h1>Emails: <span id='emails'></span></h1>
 </body>
 </body>
 </html>
