@@ -39,13 +39,15 @@ This App must be invoked via a signed request!<%
             console.dir(sr);
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
+
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
             Sfdc.canvas.byId('email').innerHTML = sr.context.user.email;
-            Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
+            Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.application.name;
             Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
-            Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
-            Sfdc.canvas.byId('emails').innerHTML = sr.context.environment.parameters.emails;
+
+            // Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
+            // Sfdc.canvas.byId('emails').innerHTML = sr.context.environment.parameters.emails;
         });
     </script>
 </head>
@@ -53,11 +55,11 @@ This App must be invoked via a signed request!<%
 <br/>
 <h1>Username: <span id='username'></span></h1>
 <h1>Email: <span id='email'></span></h1>
-<h1>Base Object: <span id='baseobject'></span></h1>
 <h1>URL: <span id='url'></span></h1>
 <h1>Canvas APP: <span id='canvasApp'></span></h1>
 <h1>URL2: <span id='url2'></span></h1>
-<h1>Emails: <span id='emails'></span></h1>
+<%--<h1>Emails: <span id='emails'></span></h1>--%>
+<%--<h1>Base Object: <span id='baseobject'></span></h1>--%>
 </body>
 </body>
 </html>

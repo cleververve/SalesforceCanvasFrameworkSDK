@@ -43,11 +43,11 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
             Sfdc.canvas.byId('email').innerHTML = sr.context.user.email;
-            Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
+            Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.application.name;
             Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
-            Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
             Sfdc.canvas.byId('emails').innerHTML = sr.context.environment.parameters.emails;
+            Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
         });
 
     </script>
