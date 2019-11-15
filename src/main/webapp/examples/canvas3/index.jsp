@@ -45,19 +45,19 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
             Sfdc.canvas.byId('url').innerHTML = sr.context.environment.locationUrl;
-            window.location = sr.context.environment.parameters.URL;
+            window.location = '/canvas2/index.jsp';
         });
 
     </script>
 </head>
 <body>
 <br/>
-<h1>Canvas APP: <span id='canvasApp'></span></h1>
-<h1>Username: <span id='username'></span></h1>
-<h1>Email: <span id='email'></span></h1>
-<h1>URL: <span id='url'></span></h1>
-
-<h1>URL2: <span id='url2'></span></h1>
+<h1>Canvas3</h1>
+<h2>Canvas APP: <span id='canvasApp'></span></h2>
+<h2>Username: <span id='username'></span></h2>
+<h2>Email: <span id='email'></span></h2>
+<h2>URL: <span id='url'></span></h2>
+<h2>URL2: <span id='url2'></span></h2>
 </body>
 </body>
 </html>

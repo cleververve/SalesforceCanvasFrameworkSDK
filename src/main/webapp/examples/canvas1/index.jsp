@@ -54,13 +54,14 @@ This App must be invoked via a signed request!<%
 </head>
 <body>
 <br/>
-<h1>Canvas APP: <span id='canvasApp'></span></h1>
-<h1>Username: <span id='username'></span></h1>
-<h1>Email: <span id='email'></span></h1>
-<h1>Base Object: <span id='baseobject'></span></h1>
-<h1>URL: <span id='url'></span></h1>
-<h1>URL2: <span id='url2'></span></h1>
-<h1>Emails: <span id='emails'></span></h1>
+<h1>Canvas1</h1>
+<h2>Canvas APP: <span id='canvasApp'></span></h2>
+<h2>Username: <span id='username'></span></h2>
+<h2>Email: <span id='email'></span></h2>
+<h2>Base Object: <span id='baseobject'></span></h2>
+<h2>URL: <span id='url'></span></h2>
+<h2>URL2: <span id='url2'></span></h2>
+<h2>Emails: <span id='emails'></span></h2>
 </body>
 </body>
 </html>
