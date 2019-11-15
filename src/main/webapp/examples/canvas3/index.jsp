@@ -45,7 +45,7 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.environment.parameters.canvasName;
             Sfdc.canvas.byId('url').innerHTML = sr.context.environment.locationUrl;
-            window.location = 'https://canvasapp12321.herokuapp.com/examples/canvas3/index3.jsp';
+            window.location = 'https://canvasapp12321.herokuapp.com/examples/canvas3/index2.jsp';
         });
 
     </script>
