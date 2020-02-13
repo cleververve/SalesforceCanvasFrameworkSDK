@@ -8,17 +8,21 @@
 This App must be invoked via a signed request!<%
         return;
     }
-   String yourConsumerSecret = "600872F1EFF3A49DFDDDE96D85B2B7C93F9359E519656270911722A0118194C0";
+
+    //String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
+//    String yourConsumerSecret = "DD85279F59FC677F0B6C7BA8C7A78BF8A0D71E95DFACCFAC8F829C5A4BDD78D8";
+    //String yourConsumerSecret = "C918503CC1B2A99910BF5AC687F102B9625EF403DC3E905E3A0D962F75FECFD2";
 
 
+    String yourConsumerSecret =   "AB075C59B6D5E74BD2120107F6C0C8417C38167E649A525D281E6A54211F36FE";
+//    String yourConsumerSecret =   "CF69959D741A8C18FD2FBDED0275094641B0102236BBB43CDCC1DE3A6AB004A4";
     String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
 %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 
-    <title>Canvas 2</title>
+    <title>Canvas 1</title>
 
     <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css"/>
 
@@ -43,24 +47,25 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
             Sfdc.canvas.byId('email').innerHTML = sr.context.user.email;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.application.name;
-            Sfdc.canvas.byId('url').innerHTML = sr.context.environment.locationUrl;
+            Sfdc.canvas.byId('url').innerHTML = sr.context.environment.record.attributes.url;
             Sfdc.canvas.byId('url2').innerHTML = sr.context.environment.parameters.URL;
-
-            // Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
-            // Sfdc.canvas.byId('emails').innerHTML = sr.context.environment.parameters.emails;
+            Sfdc.canvas.byId('emails').innerHTML = sr.context.environment.parameters.emails;
+            Sfdc.canvas.byId('baseobject').innerHTML = sr.context.environment.record.attributes.type;
         });
+
     </script>
 </head>
 <body>
 <br/>
-<h1>Canvas2</h1>
+<h1>Canvas1</h1>
+<h2>secret:<span id='secret'></span></h2>
 <h2>Canvas APP: <span id='canvasApp'></span></h2>
 <h2>Username: <span id='username'></span></h2>
 <h2>Email: <span id='email'></span></h2>
+<h2>Base Object: <span id='baseobject'></span></h2>
 <h2>URL: <span id='url'></span></h2>
 <h2>URL2: <span id='url2'></span></h2>
-<%--<h1>Emails: <span id='emails'></span></h1>--%>
-<%--<h1>Base Object: <span id='baseobject'></span></h1>--%>
+<h2>Emails: <span id='emails'></span></h2>
 </body>
 </body>
 </html>

@@ -43,6 +43,7 @@ This App must be invoked via a signed request!<%
             console.dir(sr);
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
+
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
             Sfdc.canvas.byId('email').innerHTML = sr.context.user.email;
             Sfdc.canvas.byId('canvasApp').innerHTML = sr.context.application.name;
@@ -57,6 +58,7 @@ This App must be invoked via a signed request!<%
 <body>
 <br/>
 <h1>Canvas1</h1>
+<h2>secret:<span id='secret'></span></h2>
 <h2>Canvas APP: <span id='canvasApp'></span></h2>
 <h2>Username: <span id='username'></span></h2>
 <h2>Email: <span id='email'></span></h2>
