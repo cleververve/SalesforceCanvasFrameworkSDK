@@ -57,9 +57,7 @@ This App must be invoked via a signed request!<%
 </head>
 <body>
 <br/>
-<h1>Canvas1</h1>
-<h2>secret:<span id='secret'></span></h2>
-<h2>Canvas APP: <span id='canvasApp'></span></h2>
+<h1>Canvas2</h1>
 <h2>Username: <span id='username'></span></h2>
 <h2>Email: <span id='email'></span></h2>
 <h2>Base Object: <span id='baseobject'></span></h2>
